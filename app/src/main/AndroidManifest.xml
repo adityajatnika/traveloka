@@ -10,7 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BestPriceApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.voucher.activity.DetailVoucherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.voucher.activity.ListVoucherActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.traveloka.bestpriceapp.ui.promo.activity.ForecastActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.traveloka.bestpriceapp.ui.promo.activity.AddPromoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.traveloka.bestpriceapp.ui.promo.activity.AddCampaignActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.traveloka.bestpriceapp.ui.promo.activity.CampaignActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.traveloka.bestpriceapp.ui.promo.activity.ListPromoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.produk.activity.AddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.produk.activity.DetailProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.customer.activity.DetailCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.customer.activity.ListCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.produk.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
