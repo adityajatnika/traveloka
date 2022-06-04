@@ -1,4 +1,4 @@
-package com.traveloka.bestpriceapp.ui.produk.activity
+package com.traveloka.bestpriceapp.ui.product.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
