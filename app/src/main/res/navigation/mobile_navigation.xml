@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_product">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.traveloka.bestpriceapp.ui.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_product"
+        android:name="com.traveloka.bestpriceapp.ui.product.fragment.ProductFragment"
+        android:label="@string/title_product"
+        tools:layout="@layout/fragment_product" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.traveloka.bestpriceapp.ui.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_voucher"
+        android:name="com.traveloka.bestpriceapp.ui.voucher.fragment.ListVoucherFragment"
+        android:label="@string/title_voucher"
+        tools:layout="@layout/fragment_voucher"/>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.traveloka.bestpriceapp.ui.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_customer"
+        android:name="com.traveloka.bestpriceapp.ui.customer.fragment.CustomerFragment"
+        android:label="@string/title_customer"
+        tools:layout="@layout/fragment_customer" />
+
+    <fragment
+        android:id="@+id/navigation_campaign"
+        android:name="com.traveloka.bestpriceapp.ui.campaign.fragment.CampaignFragment"
+        android:label="@string/title_campaign"
+        tools:layout="@layout/fragment_campaign" />
+
 </navigation>

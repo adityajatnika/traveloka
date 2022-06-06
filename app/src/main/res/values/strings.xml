@@ -25,4 +25,8 @@
     <string name="end_date">End Date</string>
     <string name="description_campaign">Description Campaign</string>
     <string name="save">Save</string>
+    <string name="title_voucher">Voucher</string>
+    <string name="title_product">Product</string>
+    <string name="title_customer">Customer</string>
+    <string name="title_campaign">Campaign</string>
 </resources>
