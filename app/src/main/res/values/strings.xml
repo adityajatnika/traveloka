@@ -4,6 +4,25 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Best Price App</string>
+    <string name="customer">Customer</string>
+    <string name="photos">Photos</string>
+    <string name="semua_kategori">Semua Kategori :</string>
+    <string name="semua">Semua</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="laki_laki">Laki-Laki</string>
+    <string name="photo_profile">Photo Profile</string>
+    <string name="nama_customer">Nama Customer</string>
+    <string name="voucher">Voucher</string>
+    <string name="voucher_active">Voucher Active</string>
+    <string name="ayo_berikan">Ayo Berikan</string>
+    <string name="campaign_terbaikmu">Campaign Terbaikmu</string>
+    <string name="ayo_berikan">Ayo Berikan</string>
+    <string name="campaign">campaign</string>
+    <string name="add_campaign">Add Campaign</string>
+    <string name="name_campaign">Name Campaign</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="description_campaign">Description Campaign</string>
+    <string name="save">Save</string>
 </resources>
