@@ -20,19 +20,19 @@
             android:name=".ui.voucher.activity.ListVoucherActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.ForecastActivity"
+            android:name=".ui.campaign.activity.ForecastActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.AddPromoActivity"
+            android:name=".ui.campaign.activity.AddPromoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.AddCampaignActivity"
+            android:name=".ui.campaign.activity.AddCampaignActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.CampaignActivity"
+            android:name=".ui.campaign.activity.CampaignActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.ListPromoActivity"
+            android:name=".ui.campaign.activity.ListPromoActivity"
             android:exported="false" />
         <activity
             android:name=".ui.product.activity.AddProductActivity"
