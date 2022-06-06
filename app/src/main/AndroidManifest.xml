@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.traveloka.bestpriceapp">
+    package="com.traveloka.bestpriceapp" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BestPriceApp">
+        android:theme="@style/Theme.BestPriceApp" >
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".ui.voucher.activity.DetailVoucherActivity"
             android:exported="false" />
@@ -16,25 +20,25 @@
             android:name=".ui.voucher.activity.ListVoucherActivity"
             android:exported="false" />
         <activity
-            android:name="com.traveloka.bestpriceapp.ui.promo.activity.ForecastActivity"
+            android:name=".ui.promo.activity.ForecastActivity"
             android:exported="false" />
         <activity
-            android:name="com.traveloka.bestpriceapp.ui.promo.activity.AddPromoActivity"
+            android:name=".ui.promo.activity.AddPromoActivity"
             android:exported="false" />
         <activity
-            android:name="com.traveloka.bestpriceapp.ui.promo.activity.AddCampaignActivity"
+            android:name=".ui.promo.activity.AddCampaignActivity"
             android:exported="false" />
         <activity
-            android:name="com.traveloka.bestpriceapp.ui.promo.activity.CampaignActivity"
+            android:name=".ui.promo.activity.CampaignActivity"
             android:exported="false" />
         <activity
-            android:name="com.traveloka.bestpriceapp.ui.promo.activity.ListPromoActivity"
+            android:name=".ui.promo.activity.ListPromoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.produk.activity.AddProductActivity"
+            android:name=".ui.product.activity.AddProductActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.produk.activity.DetailProductActivity"
+            android:name=".ui.product.activity.DetailProductActivity"
             android:exported="false" />
         <activity
             android:name=".ui.customer.activity.DetailCustomerActivity"
@@ -43,8 +47,8 @@
             android:name=".ui.customer.activity.ListCustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.produk.activity.MainActivity"
-            android:exported="true">
+            android:name=".ui.product.activity.ProductListActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
