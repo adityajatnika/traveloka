@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.traveloka.bestpriceapp.R
-import com.traveloka.bestpriceapp.ui.produk.activity.MainActivity
+import com.traveloka.bestpriceapp.ui.MainActivity
 
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
