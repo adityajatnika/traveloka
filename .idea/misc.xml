@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/drawable/box.xml" value="0.1505" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_campaign.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_product.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_promo.xml" value="0.16" />
@@ -16,6 +17,7 @@
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_row_product.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_voucher.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/layout_list_customer.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.262" />
         <entry key="app/src/main/res/drawable/box.xml" value="0.2195" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.316" />
