@@ -1,12 +1,12 @@
-package com.traveloka.bestpriceapp.ui.promo.activity
+package com.traveloka.bestpriceapp.ui.campaign.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.traveloka.bestpriceapp.R
 
-class ListPromoActivity : AppCompatActivity() {
+class AddPromoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_promo)
+        setContentView(R.layout.activity_add_promo)
     }
 }

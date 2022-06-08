@@ -9,30 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BestPriceApp" >
-        <activity
-            android:name=".ui.MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main" />
+<!--        <activity-->
+<!--            android:name=".ui.MainActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_main" />-->
         <activity
             android:name=".ui.voucher.activity.DetailVoucherActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.voucher.activity.ListVoucherActivity"
+            android:name=".ui.campaign.activity.ForecastActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.ForecastActivity"
+            android:name=".ui.campaign.activity.AddPromoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.promo.activity.AddPromoActivity"
+            android:name=".ui.campaign.activity.AddCampaignActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ui.promo.activity.AddCampaignActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.promo.activity.CampaignActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.promo.activity.ListPromoActivity"
+            android:name=".ui.campaign.activity.ListPromoActivity"
             android:exported="false" />
         <activity
             android:name=".ui.product.activity.AddProductActivity"
@@ -44,11 +39,12 @@
             android:name=".ui.customer.activity.DetailCustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.customer.activity.ListCustomerActivity"
+            android:name=".ui.splash.Splash"
             android:exported="false" />
         <activity
-            android:name=".ui.product.activity.ProductListActivity"
-            android:exported="true" >
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
