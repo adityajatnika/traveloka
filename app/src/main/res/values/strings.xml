@@ -27,4 +27,6 @@
     <string name="title_product">Product</string>
     <string name="title_customer">Customer</string>
     <string name="title_campaign">Campaign</string>
+    <string name="retry">retry</string>
+    <string name="loading_error_message" />
 </resources>

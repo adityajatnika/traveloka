@@ -9,7 +9,7 @@ interface ApiService {
 
     // Customer Services
     @GET("users")
-    fun getCustomers(): CustomerResponse<CustomerItem>
+    fun getCustomers(): Call<CustomerResponse>
 
     // Product Services
     @GET("products/{id}")

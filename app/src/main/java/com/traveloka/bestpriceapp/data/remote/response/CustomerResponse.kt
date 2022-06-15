@@ -2,7 +2,7 @@ package com.traveloka.bestpriceapp.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class CustomerResponse<CustomerItem>(
+data class CustomerResponse(
 
 	@field:SerializedName("values")
 	val values: List<CustomerItem>,
