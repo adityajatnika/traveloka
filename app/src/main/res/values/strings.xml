@@ -27,4 +27,16 @@
     <string name="title_product">Product</string>
     <string name="title_customer">Customer</string>
     <string name="title_campaign">Campaign</string>
+    <string-array name="product_category">
+        <item>Bed Bath Table</item>
+        <item>Health Beauty</item>
+        <item>Sport Leisure</item>
+        <item>Furniture Decor</item>
+        <item>Computer Accessories</item>
+        <item>Housewares</item>
+        <item>Watches Gifts</item>
+        <item>Telephony</item>
+        <item>Garden Tools</item>
+        <item>Auto</item>
+    </string-array>
 </resources>

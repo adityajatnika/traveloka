@@ -12,12 +12,18 @@ interface ApiService {
     fun getCustomers(): CustomerResponse<CustomerItem>
 
     // Product Services
-    @GET("products/{id}")
+    @GET("products")
     fun getProducts(
+//        @Query("category") category: String? = null, // get by category
+        @Query("page") page: Int? = 1, // get by page
+    ): Call<ProductCallResponse>
+
+    @GET("products{id}")
+    fun getProduct(
         @Query("category") category: String?, // get by category
         @Query("page") page: Int?, // get by page
         @Path("id") id: String?, //get by id
-    ): ProductResponse<ProductItem>
+    ): Call<ProductCallResponse>
 
     @FormUrlEncoded
     @POST("products")
@@ -28,9 +34,11 @@ interface ApiService {
     ): Call<ProductCallResponse>
 
     @FormUrlEncoded
-    @PUT("products")
+    @PUT("products/{id}")
     fun updateProduct(
+        @Query("id") id : String,
         @Field("base_price") basePrice:Double,
+        @Field("name") name: String,
     ): Call<ProductCallResponse>
 
     @FormUrlEncoded
