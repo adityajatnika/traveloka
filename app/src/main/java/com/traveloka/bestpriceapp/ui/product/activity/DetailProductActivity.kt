@@ -34,6 +34,7 @@ class DetailProductActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
     }
 
     private fun setUpView() {

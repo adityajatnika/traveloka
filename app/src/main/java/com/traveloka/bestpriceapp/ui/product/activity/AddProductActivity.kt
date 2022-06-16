@@ -18,6 +18,9 @@ import com.traveloka.bestpriceapp.databinding.ActivityAddProductBinding
 import com.traveloka.bestpriceapp.ui.product.fragment.ProductFragment
 import com.traveloka.bestpriceapp.ui.product.viewmodel.ProductViewModel.Companion.TAG
 import com.traveloka.bestpriceapp.utils.ResponseStatus
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,10 +43,12 @@ class AddProductActivity : AppCompatActivity() {
         binding.edtCategory.setAdapter(arrayAdapter)
         val product = intent.getParcelableExtra<Product?>(DetailProductActivity.EXTRA_PRODUCT) as ProductItem?
 //        services = ApiConfig.getApiService().addProduct()
+
         if(product != null){
             supportActionBar?.title = "Edit Product"
             binding.btSave.text = "Save Changes"
             setUpView()
+
         } else {
             binding.btSave.text = "Add Product"
             supportActionBar?.title = "Add New Product"
@@ -58,32 +63,49 @@ class AddProductActivity : AppCompatActivity() {
         binding.btChangePhoto.setOnClickListener {
             changePhoto()
         }
+
+        binding.btBack.setOnClickListener {
+            finish()
+        }
+
     }
 
     private fun updateProduct(product: ProductItem? = null) {
         binding.progressBar.visibility = View.VISIBLE
+
         if( binding.edtName.text == null &&
             binding.edtBasePrice.text == null &&
                 binding.edtCategory.text == null){
-            Toast.makeText(this@AddProductActivity, "Please fill the form first", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@AddProductActivity, "Please fill out the form first", Toast.LENGTH_SHORT).show()
         } else {
-            val services: Call<ProductCallResponse> = if (product != null){
+            // Create JSON using JSONObject
+            val jsonObject = JSONObject()
+            jsonObject.put("base_price", binding.edtBasePrice.text.toString().toDouble())
+            jsonObject.put("name", binding.edtName.text.toString())
+            jsonObject.put("product_category", binding.edtCategory.text.toString())
+
+            // Convert JSONObject to String
+            val jsonObjectString = jsonObject.toString()
+
+            // Create RequestBody ( We're not using any converter, like GsonConverter, MoshiConverter e.t.c, that's why we use RequestBody )
+            val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
+
+            val services : Call<ProductCallResponse> = if (product != null){
                 ApiConfig.getApiService().updateProduct(
                     id = product.id,
-                    name = binding.edtName.toString(),
-                    basePrice = binding.edtBasePrice.text.toString().toDouble())
+                    requestBody = requestBody)
             } else {
                 ApiConfig.getApiService().addProduct(
-                    name = binding.edtName.toString(),
-                    basePrice = binding.edtBasePrice.text.toString().toDouble(),
-                    productCategory = binding.edtCategory.toString()
+                    requestBody
                 )
             }
+            Log.e(TAG, "sampai sini")
             services.enqueue(object : Callback<ProductCallResponse> {
                 override fun onResponse(
                     call: Call<ProductCallResponse>,
                     response: Response<ProductCallResponse>
                 ) {
+                    Log.e(TAG, "sampai sini")
                     binding.progressBar.visibility = View.INVISIBLE
                     if (response.isSuccessful) {
                         val responseBody = response.body()
@@ -101,17 +123,20 @@ class AddProductActivity : AppCompatActivity() {
                             ResponseStatus.NOT_FOUND.stat -> "$statusCode : Not Found"
                             else -> "$statusCode"
                         }
+                        Log.e(TAG, binding.edtBasePrice.text.toString())
                         Log.e(TAG, "sampe gagal")
-                        Toast.makeText(this@AddProductActivity, response.message(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@AddProductActivity, binding.edtBasePrice.text.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
                 override fun onFailure(call: Call<ProductCallResponse>, t: Throwable) {
                     binding.progressBar.visibility = View.INVISIBLE
-                    Toast.makeText(this@AddProductActivity, "Retrofit Instance Failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@AddProductActivity, "Product Updated", Toast.LENGTH_SHORT).show()
+//                    val intent = Intent(this@AddProductActivity, ProductFragment::class.java)
+//                    startActivity(intent)
+                    finish()
                 }
             })
         }
-
     }
 
     private fun setUpView() {
@@ -123,7 +148,7 @@ class AddProductActivity : AppCompatActivity() {
                 .into(imgProduct)
             edtName.setText(product.name)
             edtBasePrice.setText(product.basePrice.toString())
-            edtCategory.setText(product.productCategory)
+            edtCategory.setText(product.productCategory.toCamelCase())
             edtDesc.setText("LoremLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         }
     }
@@ -153,7 +178,6 @@ class AddProductActivity : AppCompatActivity() {
         Glide.with(applicationContext)
             .load(img)
             .into(binding.imgProduct)
-        binding.edtCategory
     }
     companion object{
         const val EXTRA_PRODUCT = "extra_product"
