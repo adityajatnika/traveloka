@@ -1,6 +1,7 @@
 package com.traveloka.bestpriceapp.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class CustomerResponse<CustomerItem>(
 

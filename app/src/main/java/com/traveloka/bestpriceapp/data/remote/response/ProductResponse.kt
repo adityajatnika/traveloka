@@ -1,6 +1,8 @@
 package com.traveloka.bestpriceapp.data.remote.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class ProductResponse<ProductItem>(
 
@@ -20,6 +22,7 @@ data class ProductCallResponse(
 	val message: String
 )
 
+@Parcelize
 data class ProductItem(
 
 	@field:SerializedName("updated_at")
@@ -44,8 +47,8 @@ data class ProductItem(
 	val id: String,
 
 	@field:SerializedName("competitor_price")
-	val competitorPrice: Any,
+	val competitorPrice: Double,
 
 	@field:SerializedName("product_category")
 	val productCategory: String
-)
+) : Parcelable

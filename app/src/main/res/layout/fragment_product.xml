@@ -6,15 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".ui.product.fragment.ProductFragment">
 
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/textInputLayout2"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        app:counterMaxLength="45"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_labelCategory"-->
+<!--        app:startIconDrawable="@drawable/ic_baseline_reorder_24">-->
+
+<!--        <AutoCompleteTextView-->
+<!--            android:id="@+id/edt_category"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint="Category"-->
+<!--            android:inputType="none"-->
+<!--            android:maxLength="45"-->
+<!--            android:text="All" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_story"
-        android:layout_height="0dp"
+        android:id="@+id/rv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelCategory"
+        tools:listitem="@layout/item_row_category" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_product"
         android:layout_width="0dp"
-        tools:listitem="@layout/item_row_product"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_category"
+        tools:listitem="@layout/item_row_product" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -32,12 +64,28 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="60dp"
+        android:contentDescription="add product"
         android:foregroundGravity="bottom"
         app:fabSize="normal"
         app:layout_anchorGravity="bottom|end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_add_24"
-        android:contentDescription="add product" />
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <TextView
+        android:id="@+id/tv_labelCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="Category Product :"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
