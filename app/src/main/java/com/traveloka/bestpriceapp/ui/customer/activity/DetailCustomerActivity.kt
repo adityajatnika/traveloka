@@ -2,11 +2,14 @@ package com.traveloka.bestpriceapp.ui.customer.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.traveloka.bestpriceapp.R
+import com.traveloka.bestpriceapp.databinding.ActivityDetailCustomerBinding
 
 class DetailCustomerActivity : AppCompatActivity() {
+    private lateinit var binding :ActivityDetailCustomerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_customer)
+        binding = ActivityDetailCustomerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
+
 }
