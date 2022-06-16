@@ -21,7 +21,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_best_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -43,8 +43,8 @@
         android:backgroundTint="#43B5E2"
         android:textSize="11sp"
         app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/tv_best_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_best_price" />
 
     <Button
         android:id="@+id/button2"

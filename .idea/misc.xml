@@ -36,12 +36,13 @@
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2355" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2355" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.262" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_add_campaign.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/activity_add_product.xml" value="0.3333333333333333" />
+        <entry key="app/src/main/res/layout/activity_add_product.xml" value="0.4466666666666667" />
         <entry key="app/src/main/res/layout/activity_add_promo.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/activity_campaign.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/activity_detail_customer.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/activity_detail_product.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_detail_product.xml" value="0.4466666666666667" />
         <entry key="app/src/main/res/layout/activity_detail_voucher.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/activity_forecast.xml" value="0.4466666666666667" />
         <entry key="app/src/main/res/layout/activity_list_customer.xml" value="0.30416666666666664" />
@@ -49,17 +50,22 @@
         <entry key="app/src/main/res/layout/activity_list_voucher.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_product_list.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.225" />
         <entry key="app/src/main/res/layout/fragment_campaign.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_customer.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_list_voucher.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/fragment_product.xml" value="0.4466666666666667" />
+        <entry key="app/src/main/res/layout/fragment_product.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_voucher.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_dropdown.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/item_loading.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/item_row_campaign.xml" value="0.6" />
+        <entry key="app/src/main/res/layout/item_row_category.xml" value="0.6" />
         <entry key="app/src/main/res/layout/item_row_product.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_voucher.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/layout_list_customer.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2195" />
       </map>
