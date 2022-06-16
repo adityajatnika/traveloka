@@ -28,7 +28,7 @@
             tools:text="Judul voucher" />
 
         <TextView
-            android:id="@+id/tv_pembayaran"
+            android:id="@+id/tv_Category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
@@ -38,7 +38,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_nama"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="pembayaran" />
+            tools:text="Category" />
+
+        <TextView
+            android:id="@+id/tv_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/tv_tenggat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toEndOf="@+id/tv_Category"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama"
+            app:layout_constraintVertical_bias="0.588"
+            tools:text="Percent" />
 
         <TextView
             android:id="@+id/tv_tenggat"
@@ -47,9 +59,10 @@
             android:layout_marginTop="7dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintHorizontal_bias="0.048"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pembayaran"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Category"
+            app:layout_constraintVertical_bias="1.0"
             tools:text="tenggat" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

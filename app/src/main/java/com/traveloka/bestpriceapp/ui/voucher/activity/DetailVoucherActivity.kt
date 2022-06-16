@@ -10,8 +10,14 @@ class DetailVoucherActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.title = "List Voucher"
+
         binding = ActivityDetailVoucherBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
 
     }
 

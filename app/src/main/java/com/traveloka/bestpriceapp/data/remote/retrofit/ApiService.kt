@@ -82,7 +82,7 @@ interface ApiService {
 
     // Promo Services
     @GET("promos")
-    fun getPromos(): PromoResponse<PromoItem>
+    fun getPromos(): Call <PromoResponse>
 
     @FormUrlEncoded
     @POST("promos")
@@ -112,7 +112,7 @@ interface ApiService {
 
     // Voucher Services
     @GET("vouchers")
-    fun getVouchers(): VoucherResponse<VoucherItem>
+    fun getVouchers(): Call <VoucherCallResponse>
 
     @FormUrlEncoded
     @POST("vouchers")
