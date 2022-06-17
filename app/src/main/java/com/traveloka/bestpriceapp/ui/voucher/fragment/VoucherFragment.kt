@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.traveloka.bestpriceapp.databinding.FragmentVoucherBinding
 import com.traveloka.bestpriceapp.ui.product.activity.AddProductActivity
-import com.traveloka.bestpriceapp.ui.product.viewmodel.ProductViewModel
+import com.traveloka.bestpriceapp.ui.voucher.activity.AddVoucherActivity
 import com.traveloka.bestpriceapp.ui.voucher.adapter.ListVoucherAdapter
 import com.traveloka.bestpriceapp.ui.voucher.viewmodel.VoucherViewModel
 
@@ -78,7 +78,7 @@ class VoucherFragment : Fragment() {
         binding.rvVoucher.adapter = this@VoucherFragment.adapter
         binding.rvVoucher.layoutManager = LinearLayoutManager(requireContext())
         binding.button.setOnClickListener{
-            startActivity(Intent(requireContext(), AddProductActivity::class.java))
+            startActivity(Intent(requireContext(), AddVoucherActivity::class.java))
         }
         setUpView()
         viewModel.getListVoucher()

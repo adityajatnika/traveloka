@@ -2,6 +2,7 @@ package com.traveloka.bestpriceapp.ui.campaign.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.traveloka.bestpriceapp.data.remote.response.PromoCallResponse
 import com.traveloka.bestpriceapp.data.remote.response.PromoItem
 import com.traveloka.bestpriceapp.data.remote.response.PromoResponse
@@ -11,12 +12,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ListPromoViewModel () {
+class ListPromoViewModel:ViewModel() {
 
 
     val isLoading = MutableLiveData(true)
     val stringError = MutableLiveData<String>()
-    val Promo = MutableLiveData<List<PromoItem>>()
+    val promo = MutableLiveData<List<PromoItem>>()
 
     fun getListPromo() {
         isLoading.postValue(true)
@@ -30,7 +31,7 @@ class ListPromoViewModel () {
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
-                        Promo.postValue(responseBody.values)
+                        promo.postValue(responseBody.values)
                     }
                 } else {
                     stringError.postValue(response.body()?.message)

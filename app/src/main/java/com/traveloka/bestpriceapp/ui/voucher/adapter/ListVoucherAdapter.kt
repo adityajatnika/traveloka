@@ -1,14 +1,10 @@
 package com.traveloka.bestpriceapp.ui.voucher.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.traveloka.bestpriceapp.data.remote.response.ProductItem
 import com.traveloka.bestpriceapp.data.remote.response.VoucherItem
-import com.traveloka.bestpriceapp.databinding.ItemRowProductBinding
 import com.traveloka.bestpriceapp.databinding.ItemVoucherBinding
-import com.traveloka.bestpriceapp.ui.voucher.activity.DetailVoucherActivity
 
 class ListVoucherAdapter(private val listVoucher: List<VoucherItem>) :
     RecyclerView.Adapter<ListVoucherAdapter.ListViewHolder>() {
@@ -18,6 +14,8 @@ class ListVoucherAdapter(private val listVoucher: List<VoucherItem>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(voucher: VoucherItem) {
             binding.tvNama.text = voucher.name
+
+            binding.tvCategory.text = StringBuilder("Max discount : ").append(voucher.maxDiscount.toString())
 //            fun String.toCamelCase() =
 //                split('_').joinToString(" ", transform = String:: capitalize)
 //            binding.tvCategory.text = voucher.categoryName.toCamelCase()
