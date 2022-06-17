@@ -1,60 +1,94 @@
 package com.traveloka.bestpriceapp.ui.voucher.fragment
 
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.traveloka.bestpriceapp.R
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.traveloka.bestpriceapp.databinding.FragmentVoucherBinding
+import com.traveloka.bestpriceapp.ui.product.activity.AddProductActivity
+import com.traveloka.bestpriceapp.ui.voucher.activity.AddVoucherActivity
+import com.traveloka.bestpriceapp.ui.voucher.adapter.ListVoucherAdapter
+import com.traveloka.bestpriceapp.ui.voucher.viewmodel.VoucherViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ListVoucherFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class VoucherFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+    private var _binding: FragmentVoucherBinding? = null
+
+    private val binding get() = _binding!!
+    private val viewModel: VoucherViewModel by viewModels()
+    private val adapter = ListVoucherAdapter(ArrayList())
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ):  View
+    {
+
+        _binding = FragmentVoucherBinding.inflate(inflater, container, false)
+        return binding.root
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun setUpView(){
+        showRecyclerList()
+
+        viewModel.isLoading.observe(viewLifecycleOwner) {
+            binding.progressBar.visibility = if (it) {
+                View.VISIBLE
+            } else {
+                View.INVISIBLE
+            }
+        }
+
+        viewModel.voucher.observe(viewLifecycleOwner) {
+            if(it != null){
+                val adapter = ListVoucherAdapter(it)
+                binding.rvVoucher.adapter = adapter
+
+//
+            }
+        }
+
+        viewModel.stringError.observe(viewLifecycleOwner){
+            if(it != null){
+                Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_LONG).show()
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_voucher, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.rvVoucher.setHasFixedSize(true)
+        binding.rvVoucher.adapter = this@VoucherFragment.adapter
+        binding.rvVoucher.layoutManager = LinearLayoutManager(requireContext())
+        binding.button.setOnClickListener{
+            startActivity(Intent(requireContext(), AddVoucherActivity::class.java))
+        }
+        setUpView()
+        viewModel.getListVoucher()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListVoucherFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            VoucherFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun showRecyclerList() {
+        if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            binding.rvVoucher.layoutManager = GridLayoutManager(requireContext(), 2)
+        } else {
+            binding.rvVoucher.layoutManager = LinearLayoutManager(requireContext())
+        }
     }
 }

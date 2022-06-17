@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_voucher"
-        android:name="com.traveloka.bestpriceapp.ui.voucher.fragment.ListVoucherFragment"
+        android:name="com.traveloka.bestpriceapp.ui.voucher.fragment.VoucherFragment"
         android:label="@string/title_voucher"
         tools:layout="@layout/fragment_voucher"/>
 

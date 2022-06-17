@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.traveloka.bestpriceapp" >
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +17,7 @@
 <!--            android:exported="false"-->
 <!--            android:label="@string/title_activity_main" />-->
         <activity
-            android:name=".ui.voucher.activity.DetailVoucherActivity"
+            android:name=".ui.voucher.activity.AddVoucherActivity"
             android:exported="false" />
         <activity
             android:name=".ui.campaign.activity.ForecastActivity"
