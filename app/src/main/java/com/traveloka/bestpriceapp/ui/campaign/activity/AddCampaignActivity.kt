@@ -14,6 +14,7 @@ import com.traveloka.bestpriceapp.data.remote.response.CampaignCallResponse
 import com.traveloka.bestpriceapp.data.remote.response.CampaignItem
 import com.traveloka.bestpriceapp.data.remote.retrofit.ApiConfig
 import com.traveloka.bestpriceapp.databinding.ActivityAddCampaignBinding
+import com.traveloka.bestpriceapp.databinding.ActivityAddPromoBinding
 import com.traveloka.bestpriceapp.ui.campaign.fragment.CampaignFragment
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -22,6 +23,23 @@ import retrofit2.Call
 import retrofit2.Callback
 
 class AddCampaignActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityAddCampaignBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        supportActionBar?.title = "Tambah Promo"
+
+        binding = ActivityAddCampaignBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnSave.setOnClickListener {
+            Toast.makeText(this,"List Promo telah ditambah", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+
+    }
 
 //    private lateinit var binding: ActivityAddCampaignBinding
 //    @SuppressLint("SetTextI8n")
