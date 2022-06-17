@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.traveloka.bestpriceapp.data.remote.response.PromoItem
 import com.traveloka.bestpriceapp.databinding.ItemPromoBinding
+import java.text.DecimalFormat
+import java.text.NumberFormat
 
 class ListPromoAdapter (private val listPromo: List<PromoItem>) :
 RecyclerView.Adapter<ListPromoAdapter.ListViewHolder>(){
@@ -14,11 +16,12 @@ RecyclerView.Adapter<ListPromoAdapter.ListViewHolder>(){
         fun bind(promo: PromoItem) {
             binding.tvNamaPromo.text = promo.name
 
-            binding.tvCategory.text = promo.categoryName
+            binding.tvCategory.text = StringBuilder("Untuk kategori : ").append(promo.categoryName)
+            val maxDiscount= formatter.format(promo.maxDiscount)
             binding.tvDiscount.text = StringBuilder("Discount sebesar : ").append(promo.discount.toString())
-            binding.tvMaxdiscount.text = StringBuilder("Hingga : ").append(promo.maxDiscount.toString())
-            binding.tvMulai.text = promo.createdAt
-            binding.tvBatas.text = promo.updatedAt
+            binding.tvMaxdiscount.text = StringBuilder(" Hingga : Rp").append(maxDiscount.toString())
+//            binding.tvMulai.text = promo.createdAt
+//            binding.tvBatas.text = promo.updatedAt
         }
     }
 
@@ -36,4 +39,8 @@ RecyclerView.Adapter<ListPromoAdapter.ListViewHolder>(){
         holder.bind(data)
     }
     override fun getItemCount(): Int = listPromo.size
+
+    companion object{
+        var formatter: NumberFormat = DecimalFormat("#,###")
+    }
 }

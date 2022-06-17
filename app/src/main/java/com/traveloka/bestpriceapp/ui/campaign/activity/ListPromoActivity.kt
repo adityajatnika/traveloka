@@ -1,5 +1,6 @@
 package com.traveloka.bestpriceapp.ui.campaign.activity
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,6 +25,10 @@ class ListPromoActivity : AppCompatActivity() {
         binding = ActivityListPromoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setUpView()
+        viewModel.getListPromo()
+        binding.tambah.setOnClickListener {
+            startActivity(Intent(this@ListPromoActivity,AddPromoActivity::class.java))
+        }
     }
 
 

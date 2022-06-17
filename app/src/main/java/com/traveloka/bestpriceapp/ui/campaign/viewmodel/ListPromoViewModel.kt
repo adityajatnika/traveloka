@@ -15,7 +15,7 @@ import retrofit2.Response
 class ListPromoViewModel:ViewModel() {
 
 
-    val isLoading = MutableLiveData(true)
+    val isLoading = MutableLiveData(false)
     val stringError = MutableLiveData<String>()
     val promo = MutableLiveData<List<PromoItem>>()
 
