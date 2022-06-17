@@ -20,6 +20,12 @@ interface ApiService {
         @Query("page") page: Int? = 1, // get by page
     ): Call<ProductCallResponse>
 
+    @GET("products")
+    fun getProductsByCategory(
+        @Query("category") category: String, // get by category
+        @Query("page") page: Int? = 1, // get by page
+    ): Call<ProductCallResponse>
+
     @GET("products{id}")
     fun getProduct(
         @Query("category") category: String?, // get by category
@@ -55,6 +61,14 @@ interface ApiService {
     // Campaign Services
     @GET("campaigns")
     fun getCampaigns(): Call<CampaignCallResponse>
+
+    @POST("products")
+    fun getForecast(
+        @Body requestBody: RequestBody,
+//        @Field("name") name:String,
+//        @Field("base_price") basePrice:Double,
+//        @Field("product_category") productCategory:String
+    ): Call<ForecastResponse>
 
     @FormUrlEncoded
     @POST("campaigns")
