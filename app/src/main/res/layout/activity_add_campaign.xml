@@ -26,14 +26,15 @@
         android:layout_width="361dp"
         android:layout_height="245dp"
         android:layout_marginTop="70dp"
+        android:contentDescription="@string/add_campaign"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:contentDescription="@string/add_campaign" />
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_change"
         android:layout_width="181dp"
         android:layout_height="48dp"
         android:text="@string/add_campaign"
@@ -58,20 +59,6 @@
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="344dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/description_campaign"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDate2"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
     <EditText
         android:id="@+id/editTextDate"
@@ -100,15 +87,50 @@
         app:layout_constraintStart_toStartOf="@+id/editTextDate"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="344dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/description_campaign"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDate2"
+        app:layout_constraintStart_toStartOf="@+id/editTextDate2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/save"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#43B5E2"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
+        android:text="@string/save"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#43B5E2"
+        android:text="@string/back"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        tools:ignore="TextContrastCheck" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
