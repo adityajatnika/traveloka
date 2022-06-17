@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_campaign.xml" value="0.22" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_detail_product.xml" value="0.11548913043478261" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.262" />
         <entry key="app/src/main/res/drawable/box.xml" value="0.2195" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.316" />
