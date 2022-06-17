@@ -18,8 +18,10 @@
         <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/fragment_customer.xml" value="0.35778985507246375" />
         <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/fragment_product.xml" value="0.35778985507246375" />
         <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/fragment_voucher.xml" value="0.35778985507246375" />
-        <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/item_promo.xml" value="0.28351449275362317" />
-        <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/item_row_campaign.xml" value="0.35778985507246375" />
+        <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/item_promo.xml" value="0.5479582146248813" />
+        <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/item_row_campaign.xml" value="0.5" />
+        <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/item_row_product.xml" value="0.5" />
+        <entry key="..\:/Users/ASUS/Desktop/traveloka/app/src/main/res/layout/item_voucher.xml" value="0.67" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.262" />
         <entry key="app/src/main/res/drawable/box.xml" value="0.2195" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.316" />

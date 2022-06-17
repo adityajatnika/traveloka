@@ -22,27 +22,19 @@ data class VoucherCallResponse(
 
 data class VoucherItem(
 
-	@field:SerializedName("category_name")
-	val categoryName: String,
+	@field:SerializedName("user_id")
+	val userId: String,
 
-	@field:SerializedName("updated_at")
-	val updatedAt: String,
-
-	@field:SerializedName("experied_date")
-	val experiedDate: String,
+	@field:SerializedName("product_id")
+	val productId: String,
 
 	@field:SerializedName("name")
 	val name: String,
 
-	@field:SerializedName("created_at")
-	val createdAt: String,
+	@field:SerializedName("max_discount")
+	val maxDiscount: Double,
 
 	@field:SerializedName("id")
-	val id: Int,
-
-	@field:SerializedName("discount_percent")
-	val discountPercent: Double,
-
-	@field:SerializedName("budget")
-	val budget: Int
+	val id: Int
 )
+
