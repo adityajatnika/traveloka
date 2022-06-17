@@ -27,6 +27,14 @@
     <string name="title_product">Product</string>
     <string name="title_customer">Customer</string>
     <string name="title_campaign">Campaign</string>
+    <string name="gambar_campaign">Gambar Campaign</string>
+    <string name="campaign_tersedia">Campaign Tersedia</string>
+    <string name="tambah_campaign">Tambah Campaign</string>
+    <string name="halaman_forecast">Halaman Forecast</string>
+    <string name="nama_campaign">Nama Campaign</string>
+    <string name="beli_kebutuhan_lebaran_dengan_berbagai_macam_promo_dan_juga_voucher_cashback"> Beli Kebutuhan Keperluan Dengan Berbagai Macam Promo dan Juga Voucher Cashback</string>
+    <string name="retry">retry</string>
+    <string name="id">id</string>
     <string-array name="product_category">
         <item>Bed Bath Table</item>
         <item>Health Beauty</item>

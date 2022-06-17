@@ -11,7 +11,7 @@ interface ApiService {
 
     // Customer Services
     @GET("users")
-    fun getCustomers(): CustomerResponse<CustomerItem>
+    fun getCustomers(): Call<CustomerResponse>
 
     // Product Services
     @GET("products")
@@ -54,7 +54,7 @@ interface ApiService {
 
     // Campaign Services
     @GET("campaigns")
-    fun getCampaigns(): CampaignResponse<CampaignItem>
+    fun getCampaigns(): Call<CampaignCallResponse>
 
     @FormUrlEncoded
     @POST("campaigns")
