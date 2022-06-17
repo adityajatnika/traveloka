@@ -42,12 +42,12 @@
             android:name=".ui.customer.activity.DetailCustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splash.Splash"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.splash.Splash"
             android:exported="true"
-            android:label="@string/title_activity_main">
+            android:label="Best Price App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
