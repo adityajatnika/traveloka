@@ -41,6 +41,7 @@ class AddProductActivity : AppCompatActivity() {
         val categoryProduct = resources.getStringArray(R.array.product_category)
         val arrayAdapter = ArrayAdapter(this@AddProductActivity, R.layout.item_dropdown, categoryProduct)
         binding.edtCategory.setAdapter(arrayAdapter)
+
         val product = intent.getParcelableExtra<Product?>(DetailProductActivity.EXTRA_PRODUCT) as ProductItem?
 //        services = ApiConfig.getApiService().addProduct()
 
@@ -82,7 +83,7 @@ class AddProductActivity : AppCompatActivity() {
             val jsonObject = JSONObject()
             jsonObject.put("base_price", binding.edtBasePrice.text.toString().toDouble())
             jsonObject.put("name", binding.edtName.text.toString())
-            jsonObject.put("product_category", binding.edtCategory.text.toString())
+            jsonObject.put("product_category", binding.edtCategory.text.toString().toSnakeCase())
 
             // Convert JSONObject to String
             val jsonObjectString = jsonObject.toString()
@@ -183,5 +184,7 @@ class AddProductActivity : AppCompatActivity() {
         const val EXTRA_PRODUCT = "extra_product"
         fun String.toCamelCase() =
             split('_').joinToString(" ", transform = String::capitalize)
+        fun String.toSnakeCase() =
+            split(' ').joinToString("_", transform = String::lowercase)
     }
 }

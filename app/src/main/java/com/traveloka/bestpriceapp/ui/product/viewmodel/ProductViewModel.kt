@@ -20,16 +20,6 @@ class ProductViewModel : ViewModel() {
     val stringError = MutableLiveData<String>()
     val categoryList = MutableLiveData<String>()
 
-//    private fun setListUser(userResponses: List<UserResponse>) {
-//        val listUser = ArrayList<User>()
-//        for (user in userResponses) {
-//            listUser.add(
-//                User(user.id.toString(), user.login, user.avatarUrl)
-//            )
-//        }
-//        products.postValue(listUser)
-//    }
-
     fun getListProduct() {
         isLoading.postValue(true)
         val client = ApiConfig.getApiService().getProducts()
@@ -42,19 +32,10 @@ class ProductViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
-//                        setListUser(responseBody.values)
                         products.postValue(responseBody.values)
                     }
                 } else {
-//                    val msg = if(response.body()?.message)
-//                    val errorMessage = when (val statusCode = response.code()) {
-//                        ResponseStatus.BAD_REQUEST.stat -> "$statusCode : Bad Request"
-//                        ResponseStatus.FORBIDDEN.stat -> "$statusCode : Forbidden"
-//                        ResponseStatus.NOT_FOUND.stat -> "$statusCode : Not Found"
-//                        else -> "$statusCode"
-//                    }
                     stringError.postValue(response.body()?.message)
-//                    Log.e(MainViewModel.TAG, errorMessage)
                 }
             }
 
@@ -66,7 +47,39 @@ class ProductViewModel : ViewModel() {
             }
         })
     }
+
+    fun getListProductSearch(key : String) {
+        isLoading.postValue(true)
+        val client = ApiConfig.getApiService().getProductsByCategory(key.toSnakeCase())
+        Log.e(TAG, key.toSnakeCase())
+        client.enqueue(object : Callback<ProductCallResponse> {
+            override fun onResponse(
+                call: Call<ProductCallResponse>,
+                response: Response<ProductCallResponse>
+            ) {
+                isLoading.postValue(false)
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        products.postValue(responseBody.values)
+                    }
+                } else {
+                    stringError.postValue(response.body()?.message)
+                }
+            }
+
+            override fun onFailure(call: Call<ProductCallResponse>, t: Throwable) {
+                isLoading.postValue(false)
+                stringError.postValue(t.message)
+                Log.e(TAG, t.message.toString())
+                t.printStackTrace()
+            }
+        })
+    }
+
     companion object {
         val TAG: String = ProductViewModel::class.java.simpleName
+        fun String.toSnakeCase() =
+            split(' ').joinToString("_", transform = String::lowercase)
     }
 }
