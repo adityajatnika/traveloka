@@ -13,37 +13,50 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:background="@color/white">
+        android:layout_height="132dp"
+        android:background="@color/blue"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/iv_user"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/photos"
             card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/tv_desc"
+            android:layout_width="256dp"
+            android:layout_height="67dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@id/iv_user"
-            android:textSize="16sp"
+            android:text="@string/beli_kebutuhan_lebaran_dengan_berbagai_macam_promo_dan_juga_voucher_cashback"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/blue"
             card_view:layout_constraintBottom_toBottomOf="@+id/iv_user"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/iv_user"
+            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="@+id/iv_user"
-            tools:text="Nama Customer" />
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_campaign"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="@+id/tv_desc"
+            card_view:layout_constraintStart_toStartOf="@+id/tv_desc"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_desc"
+            tools:ignore="TextContrastCheck" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
