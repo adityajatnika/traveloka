@@ -62,13 +62,22 @@ interface ApiService {
     @GET("campaigns")
     fun getCampaigns(): Call<CampaignCallResponse>
 
-    @POST("products")
+
+    @GET("campaigns/predict-demand")
     fun getForecast(
-        @Body requestBody: RequestBody,
-//        @Field("name") name:String,
-//        @Field("base_price") basePrice:Double,
-//        @Field("product_category") productCategory:String
     ): Call<ForecastResponse>
+
+
+    @PUT("/campaigns/{id}/change_active")
+    fun setActive(
+        @Path("id") id:Int,
+        @Body requestBody: RequestBody,
+    ): Call<CampaignCallResponse>
+
+    @PUT("/campaigns/apply-campaign")
+    fun applyCampaigns(
+    ): Call<CampaignCallResponse>
+
 
     @FormUrlEncoded
     @POST("campaigns")

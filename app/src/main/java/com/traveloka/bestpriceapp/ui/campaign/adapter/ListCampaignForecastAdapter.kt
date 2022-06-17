@@ -8,14 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import android.widget.Switch
+import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.traveloka.bestpriceapp.R
 import androidx.core.util.Pair
+import com.google.gson.annotations.SerializedName
 import com.traveloka.bestpriceapp.data.remote.response.CampaignItem
 import com.traveloka.bestpriceapp.data.remote.response.ProductItem
+import com.traveloka.bestpriceapp.data.remote.response.PromoItem
 import com.traveloka.bestpriceapp.databinding.ItemRowCampaignBinding
 import com.traveloka.bestpriceapp.databinding.ItemRowProductBinding
 import com.traveloka.bestpriceapp.ui.product.activity.DetailProductActivity
@@ -86,17 +89,10 @@ class ListCampaignForecastAdapter(private val listCampaigns: List<CampaignItem>)
 
     override fun getItemCount(): Int = listCampaigns.size
 
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-//        val binding = ItemRowStoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-//        return ListViewHolder(binding)
-//    }
-//
-//    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val data = getItem(position)
-//        if (data != null) {
-//            holder.bind(data)
-//        }
-//    }
+
+
+
+
 
 //    private lateinit var onItemClickCallback: OnItemClickCallback
 //
@@ -105,11 +101,13 @@ class ListCampaignForecastAdapter(private val listCampaigns: List<CampaignItem>)
 //    }
 //
 //    interface OnItemClickCallback {
-//        fun onItemClicked(data: CategoryProduct)
+//        fun onItemClicked(data: CampaignItem)
 //    }
 //
 //    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 //        var swbCampaign : SwitchCompat = itemView.findViewById(R.id.swb_campaign)
+//        var tvName : TextView = itemView.findViewById(R.id.tv_item_name)
+//        var tvPromo : TextView = itemView.findViewById(R.id.tv_item_promo)
 //    }
 //
 //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -118,14 +116,20 @@ class ListCampaignForecastAdapter(private val listCampaigns: List<CampaignItem>)
 //    }
 //
 //    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val () = listCampaigns[position]
-//        holder.btCategory.text = name
-//        holder.btCategory.setOnClickListener{
-//            onItemClickCallback.onItemClicked(listUser[holder.adapterPosition])
+//        val (endDate,promo, isActive, updatedAt,periodical,  everyWeekend, name,  createdAt, id, startDate) = listCampaigns[position]
+//        holder.tvName.text = name
+//        holder.tvPromo
+//        if (promo.isNotEmpty()){
+//            holder.tvPromo.text = promo[0].name
+//        } else {
+//            holder.tvPromo.text = "no promo"
+//        }
+//        holder.swbCampaign.isChecked = isActive
+//        holder.swbCampaign.setOnClickListener{
+//            onItemClickCallback.onItemClicked(listCampaigns[holder.adapterPosition])
 //        }
 ////        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
 //    }
-//
-//    override fun getItemCount(): Int = listUser.size
+//    override fun getItemCount(): Int = listCampaigns.size
 
 }

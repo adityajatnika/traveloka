@@ -45,10 +45,11 @@
         <entry key="app/src/main/res/layout/item_dropdown.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/item_loading.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/item_promo.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/item_row_campaign.xml" value="0.25763358778625955" />
+        <entry key="app/src/main/res/layout/item_row_campaign.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/item_row_category.xml" value="0.4466666666666667" />
         <entry key="app/src/main/res/layout/item_row_product.xml" value="0.6666666666666666" />
         <entry key="app/src/main/res/layout/item_voucher.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/layout_list_campaign.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/layout_list_customer.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2195" />

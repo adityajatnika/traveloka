@@ -4,10 +4,10 @@ import android.content.res.Configuration
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.mikephil.charting.components.Legend
@@ -16,13 +16,13 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.traveloka.bestpriceapp.R
-import com.traveloka.bestpriceapp.databinding.ActivityAddProductBinding
+import com.traveloka.bestpriceapp.data.remote.response.CampaignItem
 import com.traveloka.bestpriceapp.databinding.ActivityForecastBinding
 import com.traveloka.bestpriceapp.ui.campaign.adapter.ListCampaignForecastAdapter
 import com.traveloka.bestpriceapp.ui.campaign.viewmodel.ForecastViewModel
 import com.traveloka.bestpriceapp.ui.product.adapter.CategoryProduct
-import com.traveloka.bestpriceapp.ui.product.adapter.ListProductAdapter
-import com.traveloka.bestpriceapp.ui.product.viewmodel.ProductViewModel
+import com.traveloka.bestpriceapp.ui.product.adapter.ListCategoryAdapter
+import com.traveloka.bestpriceapp.ui.product.viewmodel.ProductViewModel.Companion.TAG
 
 class ForecastActivity : AppCompatActivity() {
 
@@ -46,10 +46,11 @@ class ForecastActivity : AppCompatActivity() {
         viewModel.getCampaigns()
 
         binding.button.setOnClickListener {
-            Toast.makeText(this, "Campaign Active Updated", Toast.LENGTH_SHORT).show()
+            viewModel.applyCampaigns()
+//            Toast.makeText(this, "Campaign Active Updated", Toast.LENGTH_SHORT).show()
         }
         binding.button2.setOnClickListener {
-            setChart()
+            viewModel.getForecast()
             Toast.makeText(this, "Forecasting Success", Toast.LENGTH_SHORT).show()
         }
 
@@ -79,6 +80,12 @@ class ForecastActivity : AppCompatActivity() {
             }
         }
 
+        viewModel.forecast.observe(this){
+            if(it != null){
+                setChart(it)
+            }
+        }
+
         viewModel.stringError.observe(this){
             if(it != null){
                 Toast.makeText(baseContext, it.toString(), Toast.LENGTH_LONG).show()
@@ -93,25 +100,37 @@ class ForecastActivity : AppCompatActivity() {
         } else {
             binding.rvCampaign.layoutManager = LinearLayoutManager(applicationContext)
         }
+
+//        adapter.setOnItemClickCallback(object : ListCampaignForecastAdapter.OnItemClickCallback {
+//            override fun onItemClicked(data: CampaignItem) {
+//                showSelectedCategory(data)
+//            }
+//        })
     }
 
-    private fun setChart() {
+    private fun setChart(list: List<Int>) {
         val kasus = ArrayList<Entry>()
-        kasus.add(Entry(0F, 67F))
-        kasus.add(Entry(1F, 11F))
-        kasus.add(Entry(2F, 11F))
-        kasus.add(Entry(3F, 67F))
-        kasus.add(Entry(4F, 41F))
-        kasus.add(Entry(5F, 79F))
-        kasus.add(Entry(6F, 28F))
-        kasus.add(Entry(7F, 18F))
-        kasus.add(Entry(8F, 28F))
-        kasus.add(Entry(9F, 12F))
-        kasus.add(Entry(10F, 12F))
-        kasus.add(Entry(11F, 19F))
-        kasus.add(Entry(12F, 13F))
-        kasus.add(Entry(13F, 11F))
-        kasus.add(Entry(14F, 12F))
+Log.e(TAG, "masuk set chart")
+//        val names = listOf("Anne", "Peter", "Jeff")
+        for ((i, name) in list.withIndex()) {
+            kasus.add(Entry(i.toFloat(), name.toFloat()))
+        }
+//
+//        kasus.add(Entry(0F, 67F))
+//        kasus.add(Entry(1F, 11F))
+//        kasus.add(Entry(2F, 11F))
+//        kasus.add(Entry(3F, 67F))
+//        kasus.add(Entry(4F, 41F))
+//        kasus.add(Entry(5F, 79F))
+//        kasus.add(Entry(6F, 28F))
+//        kasus.add(Entry(7F, 18F))
+//        kasus.add(Entry(8F, 28F))
+//        kasus.add(Entry(9F, 12F))
+//        kasus.add(Entry(10F, 12F))
+//        kasus.add(Entry(11F, 19F))
+//        kasus.add(Entry(12F, 13F))
+//        kasus.add(Entry(13F, 11F))
+//        kasus.add(Entry(14F, 12F))
 
 //        val sembuh = ArrayList<Entry>()
 //        sembuh.add(Entry(0F, 22F))
@@ -171,11 +190,9 @@ class ForecastActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSelectedCategory(category: CategoryProduct) {
-//        val intent = Intent(requireContext(), AddProductActivity::class.java)
-////        intent.putExtra(ProfileActivity.EXTRA_USER, user)
-//        startActivity(intent)
-        Toast.makeText(applicationContext, "Menampilkan ${category.categoryName}", Toast.LENGTH_SHORT).show()
-//        viewModel.getListProductSearch(category.categoryName)
+    private fun showSelectedCategory(campaign: CampaignItem) {
+
+//        Toast.makeText(applicationContext, "Menampilkan ${category.categoryName}", Toast.LENGTH_SHORT).show()
+        viewModel.changeActive(campaign.id, campaign.isActive)
     }
 }
