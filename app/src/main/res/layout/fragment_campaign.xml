@@ -91,14 +91,14 @@
         android:backgroundTint="#43B5E2"
         android:text="@string/tambah_campaign"
         android:textColor="#4E342E"
-        app:layout_constraintBottom_toTopOf="@+id/btn_add2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_forecast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_user" />
 
     <Button
-        android:id="@+id/btn_add2"
+        android:id="@+id/btn_forecast"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

@@ -41,6 +41,7 @@ class AddProductActivity : AppCompatActivity() {
         val categoryProduct = resources.getStringArray(R.array.product_category)
         val arrayAdapter = ArrayAdapter(this@AddProductActivity, R.layout.item_dropdown, categoryProduct)
         binding.edtCategory.setAdapter(arrayAdapter)
+
         val product = intent.getParcelableExtra<Product?>(DetailProductActivity.EXTRA_PRODUCT) as ProductItem?
 //        services = ApiConfig.getApiService().addProduct()
 

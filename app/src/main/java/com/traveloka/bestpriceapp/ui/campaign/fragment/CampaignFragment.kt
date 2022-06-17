@@ -1,5 +1,6 @@
 package com.traveloka.bestpriceapp.ui.campaign.fragment
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.traveloka.bestpriceapp.databinding.FragmentCampaignBinding
+import com.traveloka.bestpriceapp.ui.campaign.activity.ForecastActivity
 import com.traveloka.bestpriceapp.ui.campaign.adapter.ListCampaignAdapter
 import com.traveloka.bestpriceapp.ui.campaign.viewmodel.CampaignViewModel
 
@@ -50,6 +52,9 @@ class CampaignFragment : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         setUpView()
         viewModel.getListCampaign()
+        binding.btnForecast.setOnClickListener {
+            startActivity(Intent(requireContext(), ForecastActivity::class.java))
+        }
     }
 
     private fun setUpView(){
