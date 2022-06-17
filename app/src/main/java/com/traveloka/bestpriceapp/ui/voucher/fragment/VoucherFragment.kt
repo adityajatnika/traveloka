@@ -60,7 +60,6 @@ class VoucherFragment : Fragment() {
                 val adapter = ListVoucherAdapter(it)
                 binding.rvVoucher.adapter = adapter
 
-//
             }
         }
 

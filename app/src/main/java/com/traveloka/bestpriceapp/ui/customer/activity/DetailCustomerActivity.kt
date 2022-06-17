@@ -1,21 +1,35 @@
 package com.traveloka.bestpriceapp.ui.customer.activity
 
 import android.content.ContentValues.TAG
+import android.content.res.Configuration
 import android.nfc.NfcAdapter.EXTRA_ID
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.security.KeyChain.EXTRA_NAME
 import android.util.Log
+import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.traveloka.bestpriceapp.R
 import com.traveloka.bestpriceapp.data.remote.Customer
 import com.traveloka.bestpriceapp.data.remote.response.CustomerItem
 import com.traveloka.bestpriceapp.databinding.ActivityDetailCustomerBinding
+import com.traveloka.bestpriceapp.ui.customer.adapter.ListCustomerAdapter
+import com.traveloka.bestpriceapp.ui.customer.adapter.VoucherAdapter
+import com.traveloka.bestpriceapp.ui.customer.viewmodel.CustomerViewModel
+import com.traveloka.bestpriceapp.ui.voucher.viewmodel.VoucherViewModel
 
 
 class DetailCustomerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailCustomerBinding
+    private val viewModel: VoucherViewModel by viewModels()
+    private val adapter = VoucherAdapter(ArrayList())
     //private val viewModel: DetailCustomerViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,11 +41,51 @@ class DetailCustomerActivity : AppCompatActivity() {
         binding = ActivityDetailCustomerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.rvVoucher.setHasFixedSize(true)
+        binding.rvVoucher.adapter = this@DetailCustomerActivity.adapter
+        binding.rvVoucher.layoutManager = LinearLayoutManager(applicationContext)
+        setUpData()
         setUpView()
+        viewModel.getListVoucher()
+
+
 
 
     }
-    private fun setUpView() {
+
+    private fun setUpView(){
+        showRecyclerlist()
+
+        viewModel.isLoading.observe(this){
+            binding.progressBar.visibility = if (it){
+                View.VISIBLE
+            }else {
+                View.INVISIBLE
+            }
+        }
+
+        viewModel.voucher.observe(this){
+            if (it != null){
+                val adapter = VoucherAdapter(it)
+                binding.rvVoucher.adapter = adapter
+            }
+        }
+
+        viewModel.stringError.observe(this){
+            if (it != null){
+                Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun showRecyclerlist() {
+        if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            binding.rvVoucher.layoutManager = GridLayoutManager(applicationContext, 2)
+        } else {
+            binding.rvVoucher.layoutManager = LinearLayoutManager(applicationContext)
+        }
+    }
+    private fun setUpData() {
         binding.apply {
             val name = intent.getStringExtra(EXTRA_NAME)
             val id = intent.getStringExtra(EXTRA_ID)
