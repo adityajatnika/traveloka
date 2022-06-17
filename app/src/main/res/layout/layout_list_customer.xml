@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:background="@color/blue">
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/iv_user"
@@ -39,6 +39,7 @@
             android:layout_toEndOf="@id/iv_user"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="@color/blue"
             card_view:layout_constraintBottom_toBottomOf="@+id/iv_user"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/iv_user"

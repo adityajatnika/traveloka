@@ -43,7 +43,7 @@ class CustomerViewModel : ViewModel() {
 //                        ResponseStatus.NOT_FOUND.stat -> "$statusCode : Not Found"
 //                        else -> "$statusCode"
 //                    }
-//                stringError.postValue(response.body()?.message)
+                stringError.postValue(response.body()?.message)
 //                    Log.e(CustomerViewModel.TAG, errorMessage)
                 }
             }

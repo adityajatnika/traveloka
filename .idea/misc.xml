@@ -4,26 +4,31 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/drawable/box.xml" value="0.1505" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/drawable/ic_baseline_product_24.xml" value="0.1505" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/drawable/ic_baseline_user_24.xml" value="0.1505" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_campaign.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_product.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_add_promo.xml" value="0.16" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_campaign.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_detail_customer.xml" value="0.25" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_detail_customer.xml" value="0.33" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_detail_product.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_detail_voucher.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_list_customer.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/activity_list_promo.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/fragment_campaign.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/fragment_campaign.xml" value="0.22" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/fragment_customer.xml" value="0.25" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/fragment_product.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/fragment_voucher.xml" value="0.1" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_dropdown.xml" value="0.1" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_promo.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_row_campaign.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_row_product.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/item_voucher.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/layout_list_campaign.xml" value="0.25" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/layout_list_customer.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/layout/layout_story_loading.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/erlin/AndroidStudioProjects/traveloka/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.262" />
         <entry key="app/src/main/res/drawable/box.xml" value="0.2195" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.316" />
