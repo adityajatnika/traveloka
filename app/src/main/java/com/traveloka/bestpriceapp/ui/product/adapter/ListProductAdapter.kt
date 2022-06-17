@@ -53,9 +53,13 @@ class ListProductAdapter(private val listProduct: List<ProductItem>) : RecyclerV
             Glide.with(itemView.context)
                 .load(img)
                 .into(binding.imgItemPhoto)
-            binding.tvItemName.text = product.name
-            fun String.toCamelCase() =
-                split('_').joinToString(" ", transform = String::capitalize)
+
+            if(product.name.length > 45){
+                binding.tvItemName.text = StringBuilder(product.name.substring(0, 44)).append(" ... ")
+            } else {
+                binding.tvItemName.text = product.name
+            }
+
             binding.tvItemCategory.text = product.productCategory.toCamelCase()
             binding.tvBestPrice.text = StringBuilder("Rp ").append(formatter.format(product.finalPrice))
 
@@ -95,5 +99,7 @@ class ListProductAdapter(private val listProduct: List<ProductItem>) : RecyclerV
 
     companion object{
         var formatter: NumberFormat = DecimalFormat("#,###")
+        fun String.toCamelCase() =
+            split('_').joinToString(" ", transform = String::capitalize)
     }
 }

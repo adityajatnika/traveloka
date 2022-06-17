@@ -2,25 +2,16 @@ package com.traveloka.bestpriceapp.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class VoucherResponse<VoucherItem>(
+data class Response(
 
 	@field:SerializedName("values")
-	val values: List<VoucherItem>,
+	val values: List<ValuesItem>,
 
 	@field:SerializedName("message")
 	val message: String
 )
 
-data class VoucherCallResponse(
-
-	@field:SerializedName("values")
-	val values: List<VoucherItem>,
-
-	@field:SerializedName("message")
-	val message: String
-)
-
-data class VoucherItem(
+data class ValuesItem(
 
 	@field:SerializedName("user_id")
 	val userId: String,

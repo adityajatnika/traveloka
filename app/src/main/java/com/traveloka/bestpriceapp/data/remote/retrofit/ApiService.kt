@@ -20,6 +20,12 @@ interface ApiService {
         @Query("page") page: Int? = 1, // get by page
     ): Call<ProductCallResponse>
 
+    @GET("products")
+    fun getProductsByCategory(
+        @Query("category") category: String, // get by category
+        @Query("page") page: Int? = 1, // get by page
+    ): Call<ProductCallResponse>
+
     @GET("products{id}")
     fun getProduct(
         @Query("category") category: String?, // get by category

@@ -46,10 +46,10 @@ class ListCategoryAdapter(private val listUser: ArrayList<CategoryProduct>) : Re
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name) = listUser[position]
         holder.btCategory.text = name
-//        holder.btCategory.setOnClickListener{
-//
-//        }
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
+        holder.btCategory.setOnClickListener{
+            onItemClickCallback.onItemClicked(listUser[holder.adapterPosition])
+        }
+//        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int = listUser.size

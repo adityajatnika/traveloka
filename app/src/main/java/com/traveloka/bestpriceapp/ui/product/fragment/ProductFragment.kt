@@ -18,6 +18,7 @@ import com.traveloka.bestpriceapp.R
 import com.traveloka.bestpriceapp.data.remote.Product
 import com.traveloka.bestpriceapp.data.remote.response.ProductItem
 import com.traveloka.bestpriceapp.databinding.FragmentProductBinding
+import com.traveloka.bestpriceapp.ui.campaign.adapter.ListCampaignForecastAdapter
 import com.traveloka.bestpriceapp.ui.product.activity.AddProductActivity
 import com.traveloka.bestpriceapp.ui.product.adapter.CategoryProduct
 import com.traveloka.bestpriceapp.ui.product.adapter.ListCategoryAdapter
@@ -32,7 +33,7 @@ class ProductFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private val viewModel: ProductViewModel by viewModels()
-    private val adapter = ListProductAdapter(ArrayList())
+    private val adapter = ListCampaignForecastAdapter(ArrayList())
     private val list = ArrayList<CategoryProduct>()
 
     override fun onCreateView(
@@ -145,9 +146,10 @@ class ProductFragment : Fragment() {
         }
 
     private fun showSelectedCategory(category: CategoryProduct) {
-        val intent = Intent(requireContext(), AddProductActivity::class.java)
-//        intent.putExtra(ProfileActivity.EXTRA_USER, user)
-        startActivity(intent)
+//        val intent = Intent(requireContext(), AddProductActivity::class.java)
+////        intent.putExtra(ProfileActivity.EXTRA_USER, user)
+//        startActivity(intent)
         Toast.makeText(requireContext().applicationContext, "Menampilkan ${category.categoryName}", Toast.LENGTH_SHORT).show()
+        viewModel.getListProductSearch(category.categoryName)
     }
 }

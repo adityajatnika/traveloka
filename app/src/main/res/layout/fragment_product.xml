@@ -6,35 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ui.product.fragment.ProductFragment">
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/textInputLayout2"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="0dp"-->
-<!--        app:counterMaxLength="45"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tv_labelCategory"-->
-<!--        app:startIconDrawable="@drawable/ic_baseline_reorder_24">-->
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/textInputLayout2"-->
+    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="0dp"-->
+    <!--        app:counterMaxLength="45"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_labelCategory"-->
+    <!--        app:startIconDrawable="@drawable/ic_baseline_reorder_24">-->
 
-<!--        <AutoCompleteTextView-->
-<!--            android:id="@+id/edt_category"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginEnd="16dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:hint="Category"-->
-<!--            android:inputType="none"-->
-<!--            android:maxLength="45"-->
-<!--            android:text="All" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
+    <!--        <AutoCompleteTextView-->
+    <!--            android:id="@+id/edt_category"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="16dp"-->
+    <!--            android:layout_marginEnd="16dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:hint="Category"-->
+    <!--            android:inputType="none"-->
+    <!--            android:maxLength="45"-->
+    <!--            android:text="All" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_category"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_labelCategory"
         tools:listitem="@layout/item_row_category" />
@@ -80,7 +80,7 @@
         android:paddingTop="10dp"
         android:paddingEnd="20dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="5dp"
         android:text="Category Product :"
         android:textSize="16sp"
         android:textStyle="bold"
