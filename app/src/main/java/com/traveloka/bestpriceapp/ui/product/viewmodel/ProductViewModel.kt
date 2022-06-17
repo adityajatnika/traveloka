@@ -18,6 +18,7 @@ class ProductViewModel : ViewModel() {
     val products = MutableLiveData<List<ProductItem>>()
     val isLoading = MutableLiveData(true)
     val stringError = MutableLiveData<String>()
+    val categoryList = MutableLiveData<String>()
 
 //    private fun setListUser(userResponses: List<UserResponse>) {
 //        val listUser = ArrayList<User>()
@@ -68,5 +69,4 @@ class ProductViewModel : ViewModel() {
     companion object {
         val TAG: String = ProductViewModel::class.java.simpleName
     }
-
 }

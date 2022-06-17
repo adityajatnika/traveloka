@@ -40,14 +40,14 @@
 
         <TextView
             android:id="@+id/tv_price"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Rp. 20000"
             android:textSize="26sp"
             android:textStyle="bold"
             android:transitionName="price"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_labelPrice"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_labelPrice" />
 

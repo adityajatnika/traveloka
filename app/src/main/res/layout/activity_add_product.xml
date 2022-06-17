@@ -135,7 +135,7 @@
             android:text="Save Change"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_back" />
+            app:layout_constraintTop_toBottomOf="@+id/lyo_edtDesc" />
 
         <Button
             android:id="@+id/bt_changePhoto"
@@ -152,12 +152,13 @@
             android:id="@+id/bt_back"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:backgroundTint="#AEAEAE"
-            android:text="Back"
+            android:text="Cancel"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lyo_edtDesc" />
+            app:layout_constraintTop_toBottomOf="@+id/bt_save" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

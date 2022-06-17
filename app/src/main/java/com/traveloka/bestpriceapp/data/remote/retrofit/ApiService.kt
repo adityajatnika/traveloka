@@ -1,6 +1,8 @@
 package com.traveloka.bestpriceapp.data.remote.retrofit
 
 import com.traveloka.bestpriceapp.data.remote.response.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 import java.util.*
@@ -25,20 +27,22 @@ interface ApiService {
         @Path("id") id: String?, //get by id
     ): Call<ProductCallResponse>
 
-    @FormUrlEncoded
+//    @FormUrlEncoded
     @POST("products")
     fun addProduct(
-        @Field("name") name:String,
-        @Field("base_price") basePrice:Double,
-        @Field("product_category") productCategory:String
+        @Body requestBody: RequestBody,
+//        @Field("name") name:String,
+//        @Field("base_price") basePrice:Double,
+//        @Field("product_category") productCategory:String
     ): Call<ProductCallResponse>
 
-    @FormUrlEncoded
+//    @Headers("Content-Type: application/json")
     @PUT("products/{id}")
     fun updateProduct(
-        @Query("id") id : String,
-        @Field("base_price") basePrice:Double,
-        @Field("name") name: String,
+        @Path("id") id : String,
+        @Body requestBody: RequestBody,
+//        @Field("base_price") basePrice:Double,
+//        @Field("name") name: String,
     ): Call<ProductCallResponse>
 
     @FormUrlEncoded
