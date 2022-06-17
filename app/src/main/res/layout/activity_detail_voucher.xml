@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:backgroundTint="#43B5E2"
-    tools:context=".ui.voucher.activity.DetailVoucherActivity">
+    tools:context=".ui.voucher.activity.AddVoucherActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout

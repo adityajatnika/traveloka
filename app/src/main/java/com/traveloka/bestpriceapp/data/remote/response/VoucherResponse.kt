@@ -37,3 +37,4 @@ data class VoucherItem(
 	@field:SerializedName("id")
 	val id: Int
 )
+

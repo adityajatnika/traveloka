@@ -2,11 +2,15 @@ package com.traveloka.bestpriceapp.ui.campaign.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.traveloka.bestpriceapp.R
+import com.traveloka.bestpriceapp.databinding.ActivityAddCampaignBinding
 
 class AddCampaignActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityAddCampaignBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_campaign)
+        binding = ActivityAddCampaignBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
